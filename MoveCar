@@ -1,0 +1,35 @@
+int tempo=1000;
+int tempo2=500;
+
+
+void setup() {
+pinMode(10,OUTPUT);
+pinMode(9,OUTPUT);
+pinMode(7,OUTPUT);
+pinMode(8,OUTPUT);
+}
+
+void loop() {
+ digitalWrite(10,1); //Ligando o Pino 10 - verde
+ digitalWrite(9,1);
+delay(tempo);
+digitalWrite(10,0);
+digitalWrite(9,0);
+delay(tempo);
+
+digitalWrite(7,1);
+delay(tempo);
+digitalWrite(7,0);
+delay(tempo);
+
+digitalWrite(8,1);
+delay(tempo);
+digitalWrite(8,0);
+delay(tempo);
+
+
+
+
+
+
+}
