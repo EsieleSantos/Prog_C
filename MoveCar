@@ -1,5 +1,6 @@
 int tempo=1000;
 int tempo2=500;
+int sensor;
 
 
 void setup() {
@@ -7,9 +8,57 @@ pinMode(10,OUTPUT);
 pinMode(9,OUTPUT);
 pinMode(7,OUTPUT);
 pinMode(8,OUTPUT);
+pinMOde(A5, INPUT);
+
+Serial.begin(9600); //minha velocidade de transmissão de dados
 }
 
 void loop() {
+
+sensor=analogRead(A5);
+
+Serial.println(sensor);
+
+if(sensor<300){
+
+digitalWrite(7,1);
+digitalWrite(8,1);
+delay(tempo);
+digitalWrite(8,0);
+digitalWrite(7,0);
+delay(tempo);
+
+digitalWrite(7,1);
+delay(tempo2);
+digitalWrite(7,0);
+delay(tempo2);
+
+}
+
+if(sensor>300) {
+
+digitalWrite(9,1);
+digitalWrite(10,1);
+delay(tempo);
+
+}
+
+if(sensor>300) {
+
+digitalWrite(9,0);
+digitalWrite(10,0);
+delay(tempo);
+
+}
+
+if(sensor > 200 && sensor <250) {
+
+digitalWrite(7,1);
+delay(tempo);
+digitalWrite(7,0);
+delay(tempo);
+
+}
  digitalWrite(10,1); //Ligando o Pino 10 - verde
  digitalWrite(9,1);
 delay(tempo);
